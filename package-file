@@ -1,0 +1,11 @@
+﻿package-file package-file
+bootloader	rk3399_loader_v1.07.105.bin
+parameter	parameter
+trust       trust.img
+uboot       uboot.img
+kernel      linux-kernel.img
+resource    linux-resource.img
+boot        ubuntu1604arm64-rootfs.img
+backup		RESERVED
+update-script	update-script
+recover-script	recover-script
