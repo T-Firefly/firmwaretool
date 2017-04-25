@@ -14,6 +14,9 @@ if [ ! -f "package-file" ]; then
 	echo "Error:No found package-file!"
 	pause
 fi
+if [ ! -d "Image" ] ;then 
+	mkdir Image
+fi
 ./afptool -pack ./ Image/update.img || pause
 ./rkImageMaker -RK330C rk3399_loader_v1.07.105.bin Image/update.img update.img -os_type:androidos || pause
 rm Image/update.img
