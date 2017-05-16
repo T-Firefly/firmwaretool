@@ -3,7 +3,7 @@
 set -e
 
 SDCARD="/dev/mmcblk0"
-PARAMETER_FILE="parameter"
+PARAMETER_FILE="parameter-sd"
 SDCARDIMG="SD.img"
 LOADERMERGEDFILE="rk3399_loader_v1.07.105.bin"
 
@@ -103,7 +103,7 @@ FLASH_IMAGR_TO_PARTITION()
     dd if=linux-resource.img of=${SDCARDIMG} seek=$(((0x006000 + 0x2000))) ibs=1M conv=sync,fsync
     dd if=linux-kernel.img   of=${SDCARDIMG} seek=$(((0x00E000 + 0x2000))) ibs=1M conv=sync,fsync
     #dd if=buildrootfs.img    of=${SDCARDIMG} seek=$(((0x018000 + 0x2000))) ibs=1M conv=sync,fsync
-    dd if=../ubuntu1604arm64-rootfs.img of=${SDCARDIMG} seek=$(((0x01A000 + 0x2000))) ibs=1M conv=sync,fsync
+    dd if=ubuntu1604arm64-rootfs.img of=${SDCARDIMG} seek=$(((0x01A000 + 0x2000))) ibs=1M conv=sync,fsync
 
     rm -rf parameter.img
 }
